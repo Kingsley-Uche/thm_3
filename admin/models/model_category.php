@@ -33,7 +33,7 @@ public function index($data){
                     
                       $name =$data['category_name'];
                       $status =$data['active'];
-                                                        
+
                              $category_name= mysqli_real_escape_string($this->conn,$name);
                             
                             $category_status=  mysqli_real_escape_string($this->conn,$status);

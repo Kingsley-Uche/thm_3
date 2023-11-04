@@ -1,14 +1,18 @@
 <?php
 if(!isset($_SESSION)){session_start();}
 Class Database{
-     public $conn;
-	function __construct(){
-                    $hostname="localhost";
-                    $username="root";
-                    $password="";
-                    $database="church_app";
+     protected $conn;
 
-                    $this->conn = new Mysqli($hostname,$username,$password,$database);
+
+
+    private $hostname="localhost";
+    private $username="root";
+    private $password="";
+    private $database="church_app";
+	function __construct(){
+                   
+
+                    $this->conn = new Mysqli($this->hostname,$this->username,$this->password,$this->database);
                    if($this->conn->connect_errno){
                        printf("Connection to database failed;%s\n",$this->conn->connect_error);
                        exit();
